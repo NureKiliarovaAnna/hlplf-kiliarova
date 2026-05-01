@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+
+    <p>
+        <b>Автор:</b>
+        <a href="{% url 'articles_by_author' article.author.pk %}">
+            {{ article.author }}
+        </a>
+    </p>
+    <p><b>Дата публікації:</b> {{ article.publication_date }}</p>
+
+    <p>{{ article.text }}</p>
+
+    <a href="{% url 'article_list' %}">Повернутися до списку статей</a>
+</body>
+</html>

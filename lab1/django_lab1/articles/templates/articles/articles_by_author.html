@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Статті автора</title>
+</head>
+<body>
+    <h1>Статті автора: {{ author.username }}</h1>
+
+    {% for article in articles %}
+        <div>
+            <h2>
+                <a href="{% url 'article_detail' article.pk %}">
+                    {{ article.title }}
+                </a>
+            </h2>
+            <p>{{ article.publication_date }}</p>
+            <p>{{ article.text|truncatewords:25 }}</p>
+        </div>
+        <hr>
+    {% empty %}
+        <p>У цього автора немає статей.</p>
+    {% endfor %}
+
+    <a href="{% url 'article_list' %}">Назад</a>
+</body>
+</html>
