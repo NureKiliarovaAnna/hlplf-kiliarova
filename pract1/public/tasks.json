@@ -1,0 +1,53 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Опрацювати теоретичні відомості про JSON",
+      "status": "completed",
+      "priority": "high",
+      "hours": 2
+    },
+    {
+      "id": 2,
+      "title": "Створити локальний JSON-файл з фактами",
+      "status": "completed",
+      "priority": "medium",
+      "hours": 1
+    },
+    {
+      "id": 3,
+      "title": "Реалізувати fetch для завантаження даних",
+      "status": "completed",
+      "priority": "high",
+      "hours": 2
+    },
+    {
+      "id": 4,
+      "title": "Додати фільтрацію завдань за статусом",
+      "status": "active",
+      "priority": "high",
+      "hours": 3
+    },
+    {
+      "id": 5,
+      "title": "Підготувати скріншоти для звіту",
+      "status": "active",
+      "priority": "medium",
+      "hours": 1
+    },
+    {
+      "id": 6,
+      "title": "Перевірити валідність прикладів JSON",
+      "status": "completed",
+      "priority": "low",
+      "hours": 1
+    },
+    {
+      "id": 7,
+      "title": "Оформити висновок практичної роботи",
+      "status": "active",
+      "priority": "medium",
+      "hours": 2
+    }
+  ]
+}
