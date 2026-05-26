@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/space_sm">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/taskCard"
+        style="@style/Widget.Lab3.Card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/surface"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="120dp"
+            android:padding="@dimen/space_md">
+
+            <View
+                android:id="@+id/statusStripe"
+                android:layout_width="5dp"
+                android:layout_height="0dp"
+                android:background="@color/primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/taskTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_md"
+                android:layout_marginEnd="@dimen/space_sm"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/detailsButton"
+                app:layout_constraintStart_toEndOf="@id/statusStripe"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/detailsButton"
+                style="@style/Widget.Lab3.IconButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Деталі"
+                android:text=""
+                app:icon="@drawable/ic_info"
+                app:iconTint="@color/primary"
+                app:layout_constraintEnd_toStartOf="@id/editButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editButton"
+                style="@style/Widget.Lab3.IconButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Редагувати"
+                android:text=""
+                app:icon="@drawable/ic_edit"
+                app:iconTint="@color/primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detailsButton" />
+
+            <TextView
+                android:id="@+id/taskDescriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/taskTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/taskTitleTextView" />
+
+            <TextView
+                android:id="@+id/taskMetaTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_sm"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/taskTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/taskDescriptionTextView" />
+
+            <TextView
+                android:id="@+id/taskStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_marginTop="@dimen/space_sm"
+                android:gravity="center"
+                android:minWidth="84dp"
+                android:paddingStart="@dimen/space_sm"
+                android:paddingEnd="@dimen/space_sm"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/taskTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/taskMetaTextView" />
+
+            <TextView
+                android:id="@+id/taskPriorityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_marginStart="@dimen/space_sm"
+                android:gravity="center"
+                android:minWidth="76dp"
+                android:paddingStart="@dimen/space_sm"
+                android:paddingEnd="@dimen/space_sm"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/taskStatusTextView"
+                app:layout_constraintStart_toEndOf="@id/taskStatusTextView"
+                app:layout_constraintTop_toTopOf="@id/taskStatusTextView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/completeButton"
+                style="@style/Widget.Lab3.IconButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Виконати"
+                android:text=""
+                app:icon="@drawable/ic_check"
+                app:iconTint="@color/success"
+                app:layout_constraintBottom_toBottomOf="@id/taskPriorityTextView"
+                app:layout_constraintEnd_toStartOf="@id/deleteButton"
+                app:layout_constraintTop_toTopOf="@id/taskPriorityTextView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteButton"
+                style="@style/Widget.Lab3.IconButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Видалити"
+                android:text=""
+                app:icon="@drawable/ic_delete"
+                app:iconTint="@color/danger"
+                app:layout_constraintBottom_toBottomOf="@id/completeButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/completeButton" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
